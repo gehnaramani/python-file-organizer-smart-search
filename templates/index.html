@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FileFlow | Smart File Organizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="logo">F</div><div><h1>FileFlow</h1><span>Smart File Organizer</span></div></div>
+    <div class="live"><span></span> Localhost • Live</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">PYTHON AUTOMATION PROJECT</p>
+        <h2>Organize your files <br><em>in one click.</em></h2>
+        <p class="sub">Automatically sort files into smart categories and search your organized folders instantly.</p>
+        <button id="organizeBtn" class="primary">⚡ Organize Demo Folder</button>
+        <p id="status" class="status">Ready to organize your demo files.</p>
+      </div>
+      <div class="hero-card">
+        <div class="folder-icon">📁</div>
+        <strong>demo_files/</strong>
+        <span>Local project folder</span>
+        <div class="mini-grid">
+          <div>🖼️ Images</div><div>📄 PDFs</div><div>🎵 Audio</div><div>💻 Code</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span>Total Files</span><strong id="total">{{ stats.Total }}</strong></div>
+      <div class="stat"><span>Images</span><strong id="images">{{ stats.Images }}</strong></div>
+      <div class="stat"><span>Documents</span><strong id="documents">{{ stats.Documents }}</strong></div>
+      <div class="stat"><span>Code</span><strong id="code">{{ stats.Code }}</strong></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h3>Smart Search</h3><p>Find a file by name inside the organized folder.</p></div>
+        <div class="search"><span>⌕</span><input id="search" placeholder="Search files..." /></div>
+      </div>
+      <div id="results" class="results"><div class="empty">Type a filename above to search.</div></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h3>File Categories</h3><p>Live overview of the demo folder.</p></div></div>
+      <div id="categories" class="category-grid"></div>
+    </section>
+  </main>
+
+  <footer>FileFlow • Built with Python, Flask, HTML, CSS & JavaScript</footer>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
